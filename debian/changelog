@@ -1,5 +1,5 @@
 libsmb2 (4.0.0-1) UNRELEASED; urgency=medium
 
-  * Initial release. (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release.
 
  -- jmk <jmk@foofus.net>  Sat, 20 Jan 2024 18:33:14 -0500

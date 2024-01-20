@@ -1,31 +1,25 @@
 Source: libsmb2
-Section: libs
+Section: misc
 Priority: optional
-Maintainer: jmk <jmk@foofus.net>
+Maintainer: Kali Developers <devel@kali.org>
+Uploaders: jmk <jmk@foofus.net>
 Rules-Requires-Root: no
 Build-Depends:
  debhelper-compat (= 13),
  cmake,
+ libkrb5-dev,
 Standards-Version: 4.6.2
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Browser: https://salsa.debian.org/debian/libsmb2
-#Vcs-Git: https://salsa.debian.org/debian/libsmb2.git
+Homepage: https://github.com/sahlberg/libsmb2 
+Vcs-Browser: https://gitlab.com/kalilinux/packages/libsmb2 
+Vcs-Git: https://gitlab.com/kalilinux/packages/libsmb2.git 
 
-Package: libsmb2-dev
-Section: libdevel
+Package: libsmb2
 Architecture: any
-Multi-Arch: same
 Depends:
- libsmb2BROKEN (= ${binary:Version}),
- ${misc:Depends},
-Description: <insert up to 60 chars description>
- <Insert long description, indented with spaces.>
-
-Package: libsmb2BROKEN
-Architecture: any
-Multi-Arch: same
-Depends:
+ libkrb5-3,
  ${shlibs:Depends},
  ${misc:Depends},
-Description: <insert up to 60 chars description>
- <Insert long description, indented with spaces.>
+Description: SMB2/3 client library 
+ Libsmb2 is a userspace client library for accessing SMB2/SMB3 shares on a
+ network. It is high performance and fully async. It supports both zero-copy
+ for SMB READ/WRITE commands as well as compounded commands.
