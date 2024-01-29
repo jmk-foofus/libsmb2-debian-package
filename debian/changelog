@@ -1,4 +1,4 @@
-libsmb2 (4.0.0-1) UNRELEASED; urgency=medium
+libsmb2 (4.0.0-1) kali-dev; urgency=medium
 
   * Initial release.
 

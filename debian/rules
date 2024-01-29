@@ -7,6 +7,10 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 %:
 	dh $@
 
+#override_dh_auto_configure:
+#	dh_auto_configure -- --without-libkrb5
 
-#sed -i "/dependency_libs/ s/'.*'/''/"
-#"$(CURDIR)/debian/usr/lib/x86_64-linux-gnu/libsmb2.la"
+# non-empty-dependency_libs-in-la-file -lgssapi_krb5 [usr/lib/x86_64-linux-gnu/libsmb2.la:20]
+override_dh_install:
+	sed -i "/dependency_libs/ s/'.*'/''/" `find . -name 'libsmb2.la'`
+	dh_install
